@@ -7,7 +7,7 @@ This is a React-based web application that serves as a clone of Amazon website. 
 (RTK) in two different versions: 
 
   - **Synchronous** cart management using JSON-server API **only** for fetching products. While localStorage was used to save the Shopping cart items.`this branch`
-  - **Asynchronous** cart management using JSON Server API for fetching products and save Shopping cart items, simulating real-world backend integration. *`which is available in`* [AsyncThunkMigration branch](https://github.com/aya-3bdo/Amazon-App/tree/AsyncThunkMigration)
+  - **Asynchronous** cart management using JSON Server API for fetching products and save Shopping cart items, simulating real-world backend integration. *`which is available in`* [AsyncThunkMigration branch](https://github.com/aya-3bdo/Amazon-App/tree/AthycTunk-Migration-fixing)
     
 ## Features
 
@@ -52,5 +52,5 @@ This is a React-based web application that serves as a clone of Amazon website. 
 
  **For any questions or feedback, please feel free to reach out to me:**
 
-   - Email: aya.abdelghany996@gmail.com 
+   - Email: ayaa96abdo@gmail.com 
 
