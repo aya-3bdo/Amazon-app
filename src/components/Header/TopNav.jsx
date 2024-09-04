@@ -1,10 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../styling/topNav.css";
+import $ from 'jquery';
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   HiOutlineLocationMarker,
   HiOutlineSearch} from "react-icons/hi";
+import { BsCheckLg } from "react-icons/bs";
 
 
 export const TopNav = () => {
@@ -23,13 +26,29 @@ export const TopNav = () => {
     });
   });
 
+//   useEffect(() => {
+//     // Browser detection logic
+//     let leftSideSearch = document.querySelector('.left-side-search');
+//     console.log(leftSideSearch)
+//     const userAgent = navigator.userAgent.toLowerCase();
+//     let browserName = 'other';
+//     if (userAgent.indexOf('firefox') > -1) {
+//         browserName = 'firefox';
+//     }; 
+//     // Apply specific styles based on the browser name
+//     if (browserName === 'firefox') {
+//       leftSideSearch.style.classList.add('firefox');
+//     }
+// }, []);
+
+
   return (
     < div className="TopStrip d-flex w-100">
 
       <nav className="navbar navbar-expand-lg top-strip w-100 px-md-0 d-flex flex-nowrap">
         {/*  ** ** ** ** ## ##  Top strip ## ## ** **  ** ** ** */}
 
-        <div className="parent-top-strip  container-fluid mx-1">
+        <div className="parent-top-strip  container-fluid mx-1 px-4">
           {/*  ** ** ** Left section-- top strip  ** ** ** */}
 
           <div className="left-section-top-strip d-flex  justify-content-between ">
@@ -39,7 +58,7 @@ export const TopNav = () => {
               <NavLink to={'/'} className=" d-block justify-content-center">
                 <img
                   className="navImg"
-                  src="/src/assets/imgs/amazon-logo-white.png"
+                  src="/assets/imgs/amazon-logo-white.png"
                 ></img>
               </NavLink>
               <div className="logoText d-flex">
@@ -64,9 +83,8 @@ export const TopNav = () => {
           {/*  ** ** ** middle section-- top strip  ** ** ** */}
 
           <div
-            className="middle-section-top-strip  pt-1 px-2 px-xlg-0"
+            className="middle-section-top-strip  pt-1 px-2 px-xlg-0 d-flex"
           >
-
             {/* select slice */}
             
             <div className="left-side-search d-flex border-radius-3">
@@ -106,7 +124,7 @@ export const TopNav = () => {
 
             {/* search input slice */}
 
-            <div className="middle-side-search d-flex me-0 w-100 overflow-hidden">
+            <div className="middle-side-search d-flex me-0 w-100 overflow-hidden position-relative">
               <form className="d-flex search-wrapper">
                 <input
                   className="form-control d-flex "
@@ -114,16 +132,23 @@ export const TopNav = () => {
                   placeholder="Search Amazon.eg"
                   aria-label="Search"
                 ></input>
-              </form>
-            </div>
-
-            {/* search button slice */}
-
-            <div className="right-side-search search-ico d-flex  ms-0 ">
+                         <div className="right-side-search search-ico d-flex  ms-0 ">
               <button className="nav-search-submit-button px-2 " type="submit">
                 <HiOutlineSearch />
               </button>
             </div>
+              </form>
+            
+            </div>
+
+            {/* search button slice */}
+
+            {/* <div className="right-side-search search-ico d-flex  ms-0 ">
+              <button className="nav-search-submit-button px-2 " type="submit">
+                <HiOutlineSearch />
+              </button>
+            </div>
+             */}
           </div>
 
           {/*  ** ** ** right section-- top strip  ** ** ** */}
@@ -133,10 +158,9 @@ export const TopNav = () => {
             {/*  Lang slices */}
 
             <div className="lang-slice position-relative d-flex flex-row flex-nowrap align-items-end">
-                    <span id="dropDown-arrow"></span>
               <div id="flag-img">
 
-                <img src="/src/assets/imgs/icons8-egypt-48.png"></img>
+                <img src="/assets/imgs/icons8-egypt-48.png"></img>
               </div>
               <span className="text-uppercase  d-block lang">en</span>
               <div className="dropdown ms-0 d-flex vertical-align-bottom">
@@ -146,7 +170,10 @@ export const TopNav = () => {
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                ></button>
+                >
+                    <span id="dropDown-arrow"></span>
+
+                </button>
 
                 <ul
                   id="lang-dropdown"
@@ -180,7 +207,7 @@ export const TopNav = () => {
                   <div className="dropdown-divider mx-auto"> </div>
                   <li className="d-block mx-3">
                     <img
-                      src="/src/assets/imgs/icons8-egypt-48.png"
+                      src="/assets/imgs/icons8-egypt-48.png"
                       id="dropDown-img"
                     ></img>
                     <div className="d-inline">
@@ -208,14 +235,16 @@ export const TopNav = () => {
               </div>
               <div className="signIn-dropDown-menu dropdown d-flex flex-nowrap flex-row position-relative">
                 <h6 className="text-capitalize d-block">account & lists</h6>
-                <span id="dropDown-arrow-signIn"></span>
                 <button
                   className="btn  dropdown-toggle d-flex align-self-center  pe-1"
                   type="button"
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                ></button>
+                >
+                <span id="dropDown-arrow-signIn"></span>
+
+                </button>
                 <div
                   id="sign-in-menu"
                   className="dropdown-menu m-0 p-0 "
@@ -272,7 +301,7 @@ export const TopNav = () => {
             <div className="cart-slice d-flex flex-row position relative p-1 ">
               <NavLink to="ShoppingCart" className="text-decoration-none">
                 <div className="cart-img d-flex justify-content-center">
-                  <img src="/src/assets/imgs/icons82-shopping-cart-64.png"></img>
+                  <img src="/assets/imgs/icons82-shopping-cart-64.png"></img>
                   <span className="cart-items position-absolute d-block ms-2">
                     {cart}
                   </span>

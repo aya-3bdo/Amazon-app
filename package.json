@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-   
-    "dev": "vite & json-server -w ./public/products.json --port 3001",
+    "dev": "vite & json-server -w ./products.json --port 3001",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,6 +12,7 @@
     "@reduxjs/toolkit": "^1.9.6",
     "axios": "^1.5.1",
     "bootstrap": "^5.1.3",
+    "jquery": "^3.7.1",
     "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

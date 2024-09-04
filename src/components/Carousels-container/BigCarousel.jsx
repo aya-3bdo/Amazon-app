@@ -13,7 +13,7 @@ export default function BigCarousel() {
           <div className="carousel-inner">
             <div className="carousel-item ">
               <img
-                src="/src/assets/imgs/1fir-Carousel_1.jpg"
+                src="/assets/imgs/1fir-Carousel_1.jpg"
                 className="d-block w-100"
                 alt="..."
               />
@@ -21,7 +21,7 @@ export default function BigCarousel() {
 
             <div className="carousel-item active">
               <img
-                src="/src/assets/imgs/1fir-Carousel_2.jpg"
+                src="/assets/imgs/1fir-Carousel_2.jpg"
                 className="d-block w-100"
                 alt="..."
               />
@@ -29,7 +29,7 @@ export default function BigCarousel() {
 
             <div className="carousel-item">
               <img
-                src="/src/assets/imgs/1fir-Carousel_3.jpg"
+                src="/assets/imgs/1fir-Carousel_3.jpg"
                 className="d-block w-100"
                 alt="..."
               />
@@ -37,7 +37,7 @@ export default function BigCarousel() {
 
             <div className="carousel-item">
               <img
-                src="/src/assets/imgs/1fir-Carousel_4.jpg"
+                src="/assets/imgs/1fir-Carousel_4.jpg"
                 className="d-block w-100"
                 alt="..."
               />
@@ -45,7 +45,7 @@ export default function BigCarousel() {
 
             <div className="carousel-item">
               <img
-                src="/src/assets/imgs/1fir-Carousel_5.jpg"
+                src="/assets/imgs/1fir-Carousel_5.jpg"
                 className="d-block w-100"
                 alt="..."
               />
@@ -53,7 +53,7 @@ export default function BigCarousel() {
           
             <div className="carousel-item">
               <img
-                src="/src/assets/imgs/1fir-Carousel_6.jpg"
+                src="/assets/imgs/1fir-Carousel_6.jpg"
                 className="d-block w-100"
                 alt="..."
               />

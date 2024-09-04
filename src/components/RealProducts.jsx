@@ -4,12 +4,9 @@ import RatingStars from "./RatingStars";
 import { LiaStar, LiaStarSolid } from "react-icons/lia";
 import { LiaStarHalfAltSolid } from "react-icons/lia";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart} from "../logic/Cart-slice";
+import { addToCart } from "../logic/Cart-slice";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-
-
 export const RealProducts = () => {
   const customIcons = [
     // *********** 2.5   ===>  0
@@ -127,35 +124,30 @@ export const RealProducts = () => {
   ];
 
   const styleAddedBtn = {
-    background: 'hsl(0, 39%, 43%)',
-  width: '40%',
-	fontSize: '0.3rem',
-  paddingInline: '6px',
- }
-
- 
-  
+    background: "hsl(0, 39%, 43%)",
+    width: "45%",
+    fontSize: "0.9rem",
+    paddingInline: "6px",
+    paddingBlock: "1px",
+  };
+  const dispatch = useDispatch();
+  const { cartItems, itemsList } = useSelector((state) => state.shoppingCart);
 
   const [items, setItems] = useState([]);
   const getItems = async () => {
-    const { data } = await axios.get(" http://localhost:3001/products");
-    setItems(data);
+    const { data } = await axios.get(
+      " https://aya-3bdo.github.io/products/products.json"
+    );
+    setItems(data.products);
   };
-
   useEffect(() => {
     getItems();
   }, []);
 
-  const dispatch = useDispatch();
-
-  const {cartItems} = useSelector((state) => state.shoppingCart);
-  
-   function styleTotalPrice(cost) {
-     let addCommas = cost.toLocaleString();
-      return addCommas;
- }
-
-
+  function styleTotalPrice(cost) {
+    let addCommas = cost.toLocaleString();
+    return addCommas;
+  }
 
   return (
     <>
@@ -166,7 +158,11 @@ export const RealProducts = () => {
               {items.map((item) => (
                 <div key={item.id} className="col-3">
                   <div className="card">
-                    <img src={item.image} className="card-img-top" alt="..." />
+                    <img
+                      src={`../assets/imgs/realProduct${item.id}.jpg`}
+                      className="card-img-top"
+                      alt="..."
+                    />
                     <div className="card-body">
                       <h6 className="card-title">{item.title}</h6>
                       <p className="card-text">
@@ -189,7 +185,7 @@ export const RealProducts = () => {
                           cartItems.some((val) => val.id === item.id) ? (
                             <span
                               style={styleAddedBtn}
-                              className= 'btn'
+                              className="btn"
                               onClick={() => {
                                 dispatch(addToCart(item));
                               }}
@@ -212,8 +208,7 @@ export const RealProducts = () => {
                             className="btn"
                             onClick={() => {
                               dispatch(addToCart(item));
-                                // totalItemsPrice;
-
+                              // totalItemsPrice;
                             }}
                           >
                             Add to cart
@@ -226,11 +221,12 @@ export const RealProducts = () => {
               ))}
             </div>
           ) : (
-            <div>....Loading</div>
+            <div class="spinner-border text-warning mx-auto position-relative" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
           )}
         </div>
       </div>
     </>
   );
 };
-

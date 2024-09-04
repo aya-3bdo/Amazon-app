@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import "../../styling/MiddleCarousels.css";
+import { useEffect } from "react";
 import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
@@ -10,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { ThirdCarouselSlider } from "./ThirdCarouselSlider";
 import { RealProducts } from "../RealProducts";
+import { BsCheckLg } from "react-icons/bs";
 
 export default function MiddleCarousels() {
   let settings = {
@@ -21,6 +23,7 @@ export default function MiddleCarousels() {
     autoplay: true,
     pauseOnFocus: true,
   };
+
 
   return (
     <div className="middle-carousels-container ">
@@ -37,16 +40,16 @@ export default function MiddleCarousels() {
           <MdOutlineKeyboardArrowRight />
         </span>
         <Slider {...settings} className="py-4">
-          <img src="/src/assets/imgs/4four-carousel-1.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-2.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-3.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-4.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-5.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-6.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-7.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-8.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-9.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-10.jpg" />
+          <img src="/assets/imgs/4four-carousel-1.jpg" />
+          <img src="/assets/imgs/4four-carousel-2.jpg" />
+          <img src="/assets/imgs/4four-carousel-3.jpg" />
+          <img src="/assets/imgs/4four-carousel-4.jpg" />
+          <img src="/assets/imgs/4four-carousel-5.jpg" />
+          <img src="/assets/imgs/4four-carousel-6.jpg" />
+          <img src="/assets/imgs/4four-carousel-7.jpg" />
+          <img src="/assets/imgs/4four-carousel-8.jpg" />
+          <img src="/assets/imgs/4four-carousel-9.jpg" />
+          <img src="/assets/imgs/4four-carousel-10.jpg" />
         </Slider>
       </div>
 
@@ -63,17 +66,17 @@ export default function MiddleCarousels() {
           <MdOutlineKeyboardArrowRight />
         </span>
         <Slider {...settings} className=" py-1 ">
-          <img src="/src/assets/imgs/3thir-carousel-1.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-2.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-3.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-4.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-5.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-6.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-7.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-8.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-9.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-10.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-11.jpg" />
+          <img src="/assets/imgs/3thir-carousel-1.jpg" />
+          <img src="/assets/imgs/3thir-carousel-2.jpg" />
+          <img src="/assets/imgs/3thir-carousel-3.jpg" />
+          <img src="/assets/imgs/3thir-carousel-4.jpg" />
+          <img src="/assets/imgs/3thir-carousel-5.jpg" />
+          <img src="/assets/imgs/3thir-carousel-6.jpg" />
+          <img src="/assets/imgs/3thir-carousel-7.jpg" />
+          <img src="/assets/imgs/3thir-carousel-8.jpg" />
+          <img src="/assets/imgs/3thir-carousel-9.jpg" />
+          <img src="/assets/imgs/3thir-carousel-10.jpg" />
+          <img src="/assets/imgs/3thir-carousel-11.jpg" />
         </Slider>
       </div>
 
@@ -83,21 +86,7 @@ export default function MiddleCarousels() {
      {/* Third Carousel */}
      <ThirdCarouselSlider />
       
-      {/* divider */}
-      <div className="middleContainer-divider">
-        <div className="Top-divider"></div>
-        <p>See personalized recommendations</p>
-        <Link to='/signin' className="button">
-          <span>
-          sign in
-          </span>
-        </Link>
-        <p>
-          new customer? <Link to="/createAccount">Start here</Link>
-        </p>
-        <div className="Bottom-divider"></div>
-
-      </div>
+    
     </div>
   );
 }

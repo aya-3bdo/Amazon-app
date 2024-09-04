@@ -1,7 +1,6 @@
 @import "./amazonEmber-fonts.css";
 @import "./colors.css";
 
-
 .RealProducts {
   /* max-height: 80dvh; */
   height: 100%;
@@ -9,19 +8,22 @@
   margin-left: 0!important;
   padding-left: 0!important;
 position: relative;
+min-height: 392px;
 }
 
 .RealProducts .RealProducts-fir-row
 /* .RealProducts div.RealProducts-sec-row  */
 {
   padding: 1rem;
-  /* min-width: 1400px; */
-  min-width: 1454px;
+  /* min-width: 1454px; */
+  min-width: 1421px;
   width: 100%;
   max-height: 420px;
   display: flex;
   position: relative;
-  left: -21px;
+  /* left: -21px; */
+  left: -17px;
+
 }
 
 .RealProducts .RealProducts-fir-row .row div.col-3
@@ -30,13 +32,16 @@ position: relative;
   display: flex;
   height: 100%;
     margin-bottom: 20px;
-
+  justify-content: flex-end;
+margin-bottom: 0.5rem;
 }
 .RealProducts .RealProducts-fir-row .row div.col-3 > .card
 /* .RealProducts .RealProducts-sec-row .row div.col-3 > .card */
  {
   padding-block: 16px 22px;
   padding-inline:  16px 12px;
+  width: 100%;
+
 }
 
 .RealProducts .RealProducts-fir-row .row div.col-3 > .card > *
@@ -127,7 +132,7 @@ margin-bottom: 0;
 .RealProducts .RealProducts-fir-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child
 /* .RealProducts .RealProducts-sec-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child */
 {
-font-size: 0.4rem;
+font-size: 0.7rem;
 vertical-align: super;
 margin-right: 1px;
 }
@@ -153,10 +158,10 @@ vertical-align:bottom;
 .RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > span.btn
 /* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > span.btn  */
 {
-	font-size: 0.5rem;
-  width: 35.4%;
+	font-size: 0.9rem;
+  width: 36.4%;
   margin: 0;
-  padding: 0;
+  padding: 2px;
 position: absolute;
 bottom: 3px;
 right: -12px;
@@ -189,4 +194,8 @@ line-height: 28px;
  {
 
 text-transform: capitalize;
+}
+
+div.spinner-border{
+  top: 320px
 }

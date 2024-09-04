@@ -12,8 +12,8 @@
 
 }
 .BottomStrip .navbar{
-	max-height: 40px;
-	margin-block: -4px 6px;
+	max-height: 41px;
+	margin-block: -4px 8px;
 }
 
 .BottomStrip .navbar li:not(li:first-child){
@@ -22,7 +22,7 @@
 
 .BottomStrip .navbar li a{
 	color: hsl(0, 0%, 100%);
-	font-size: 0.799rem;
+	font-size: 0.83rem;
 	font-family: var(--regular-font);
   white-space: nowrap;
 	padding-inline: 4px 9px;
@@ -52,8 +52,12 @@
 
 .BottomStrip .navbar ul > li:first-child {
 height: 39px;
-margin-bottom: 7px;
+/* margin-bottom: 7px; */
+display: flex;
+justify-content: center;
+align-self: center;
 margin-right: 0px;
+
 }
 
 .BottomStrip .navbar ul > li:first-child > a > h6:only-child{

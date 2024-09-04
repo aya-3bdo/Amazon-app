@@ -3,7 +3,7 @@ import "../styling/shopping-cart.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeQty, deleteItem } from "../logic/Cart-slice";
-
+import $ from 'jquery';
 const ShoppingCart = () => {
   $(function () {
     $("li.option").on("click", function () {
@@ -51,7 +51,6 @@ const ShoppingCart = () => {
 
     if (Number.isInteger(total) == false) {
       return parseFloat(total).toFixed(3);
-      // return parseFloat(styleTotalPrice(total)).toFixed(3);
     } else {
       return total;
     }
@@ -78,7 +77,7 @@ const ShoppingCart = () => {
         <div className="shopping-cart-container m-0 p-1 pe-0 pb-0">
           {cartItems.length < 1 ? (
             <div className="empty-shopping-cart fir-slice">
-              <img src="../../src/assets/imgs/Shopping-cart.svg" />
+              <img src="../../assets/imgs/Shopping-cart.svg" />
               <div className="right-content">
                 <h5>Your Amazon cart is empty </h5>
                 <Link>Shop today's deals </Link>
@@ -103,7 +102,7 @@ const ShoppingCart = () => {
                   <div id="cartItem" key={item.id}>
                     <div className="sh-cart-content d-flex position-relative">
                       <div className="sh-left-content">
-                        <img src={item.image} alt="" />
+                        <img src={`../assets/imgs/realProduct${item.id}.jpg`} alt="" />
                       </div>
                       <div className="sh-right-content  ">
                         <h5 className="item-title">{item.description}</h5>

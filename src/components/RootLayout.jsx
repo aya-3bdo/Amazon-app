@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
 const outletStyle = {
-  minHeight: '3809px',
+  minHeight: '3000px',
   maxHeight: 'none',
   height: 'auto',
   overflowY: 'visible',

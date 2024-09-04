@@ -1,15 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BsCheckLg } from "react-icons/bs";
 // Get Real Products from the Api.
-const getRealProducts = axios.get("http://localhost:3001/products");
+const getRealProducts = axios.get("https://aya-3bdo.github.io/products/products.json");
 const { data: products } = await getRealProducts;
 // Get the cart Items From Local Storage if exist.
 let cartItems = localStorage.getItem("cartProducts")
   ? JSON.parse(localStorage.getItem("cartProducts"))
   : [];
+
   // Store Initial state.
 const initialState = {
-  itemsList: products,
+  itemsList: products ,
   cartItems,
 };
 
