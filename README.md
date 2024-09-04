@@ -33,7 +33,7 @@ This is a React-based web application that serves as a clone of Amazon website. 
 
 - Clone the repository:
 
-    `git clone -b AsyncThunkMigration https://github.com/aya-3bdo/Amazon-App.git`
+    `git clone -b AthycTunk-Migration-fixing https://github.com/aya-3bdo/Amazon-App.git`
 
 ### Install Instructions:
 
@@ -49,7 +49,7 @@ This is a React-based web application that serves as a clone of Amazon website. 
 
 ## Deployment
 
-The enhanced version of the project has been deployed to Netlify and can be accessed at the following URL: [Amazon app](https://amazon-web-app-cl.netlify.app)
+The enhanced version of the project has been deployed to Netlify and can be accessed at the following URL: [Amazon app](https://amazon-web-clone-app.netlify.app/)
 
 
 ## Contact
