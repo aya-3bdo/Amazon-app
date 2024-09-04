@@ -1,18 +1,18 @@
 // Handle Resizing TopNav select-input of middle section.
-export const hanleResizingInput = () => {
-  const selectMenu = document.querySelector("#select-menu");
-  if (selectMenu.value.length < 4) {
-    selectMenu.style.width = `${selectMenu.value.length * 17}px`;
-  } else if (selectMenu.value.length < 7) {
-    selectMenu.style.width = `${selectMenu.value.length * 14.5}px`;
-  } else if (selectMenu.value.length <= 14) {
-    selectMenu.style.width = `${selectMenu.value.length * 11}px`;
-  } else if (selectMenu.value.length < 20) {
-    selectMenu.style.width = `${selectMenu.value.length * 10}px`;
-  } else if (selectMenu.value.length < 35) {
-    selectMenu.style.width = `${selectMenu.value.length * 8}px`;
-  }
-};
+// export const hanleResizingInput = () => {
+//   const selectMenu = document.querySelector("#select-menu");
+//   if (selectMenu.value.length < 4) {
+//     selectMenu.style.width = `${selectMenu.value.length * 17}px`;
+//   } else if (selectMenu.value.length < 7) {
+//     selectMenu.style.width = `${selectMenu.value.length * 14.5}px`;
+//   } else if (selectMenu.value.length <= 14) {
+//     selectMenu.style.width = `${selectMenu.value.length * 11}px`;
+//   } else if (selectMenu.value.length < 20) {
+//     selectMenu.style.width = `${selectMenu.value.length * 10}px`;
+//   } else if (selectMenu.value.length < 35) {
+//     selectMenu.style.width = `${selectMenu.value.length * 8}px`;
+//   }
+// };
 // Handle Showing TopNav signIn list 
 export const handleShowSignInSliceList = () => {
   const dropdownArrowSignIn = document.querySelector("#dropDown-arrow-signIn");

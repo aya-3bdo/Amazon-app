@@ -3,8 +3,10 @@
 
 
 .middle-carousels-container {
-   min-width: 1400px;
-  width: 1408px;
+  /* min-width: 1400px; */
+  /* width: 1408px; */
+  min-width: 1384px;
+    width: 1384px;
   cursor: pointer;
   position: absolute;
   top: 69%;
@@ -12,8 +14,6 @@
   right: 2%;
 margin-inline: auto;
 font-family: var(AmazonEmber_Rg);
-/* background: var(--white-100); */
-
 }
 
 
@@ -30,18 +30,28 @@ font-family: var(AmazonEmber_Rg);
   height: 100px;
   display: block;
   z-index: 1;
-  opacity: 0.9;
+  opacity: 0.4;
   top: 45%;
   box-shadow: 0 1px 3px #888;
+
 }
 
-.middle-carousels-container .slider-container .slick-prev {
-  left: -3%;
+.middle-carousels-container .slider-container .slick-prev:focus,
+.middle-carousels-container .slider-container .slick-prev:hover,
+.middle-carousels-container .slider-container .slick-next:hover, 
+  .middle-carousels-container .slider-container .slick-next:focus {
+  opacity: 0.9;
+ box-shadow:  inset 0 0 0 2px #fff, inset 0 0 0 4px #008296;
 }
 
-.middle-carousels-container .slider-container .slick-next {
-  right: -3%;
+
+.middle-carousels-container .slider-container .slick-prev  {
+  left: 0;
 }
+
+ .middle-carousels-container .slider-container .slick-next {
+  right: 0;
+} 
 
 /*  -----------------  old arrows  ---------------- */
 .middle-carousels-container
@@ -128,17 +138,15 @@ font-family: var(AmazonEmber_Rg);
 }
 
 .middle-carousels-container .slider-container span.left-arrow {
-  left: 0.3%;
+  left: 3%;
   top: 40%;
 }
 
 .middle-carousels-container .slider-container span.right-arrow {
-  right: 0.3%;
   top: 40%;
+  right: 3%;
+
 }
-
-
-
 
 .middle-carousels-container .third-carousel .slick-slide {
   margin-inline: 1.1rem;
@@ -189,7 +197,7 @@ padding: 0 0 2.5rem;
   .third-carousel.slider-container
   .img-container
   div.describtion {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   margin: 0;
   position: absolute;
   top: 80%;
@@ -209,7 +217,7 @@ padding: 0 0 2.5rem;
   .img-container div.describtion span:nth-child(1){
     background: var(--red-text-background);
     color: var(--white-100);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   line-height: 1rem;
   padding: 0.15rem;
 
@@ -228,78 +236,3 @@ overflow: hidden;
 text-overflow: ellipsis;
 line-height: 1.6rem;
   }
-
-
-.middle-carousels-container div.middleContainer-divider{
-  background: var(--white-100);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* margin: 0.8rem auto; */
-  position: absolute;
-  left: -22%;
-  right: -22%;
-  padding: 1rem 0;
-  bottom: -39.7%;
-}
-
-.middle-carousels-container div.middleContainer-divider > *{
-  margin: 0;
-  padding: 0;
-}
-
-.middle-carousels-container div.middleContainer-divider > *:not(a){
-  font-size: 0.7rem;
-}
-
-.middle-carousels-container div.middleContainer-divider div.Top-divider{
-  border-top: 1px solid hsla(0, 0%, 0%, 0.144);
-  /* width: 98%; */
-  width: 92%;
-  padding: 1rem;
-}
-
-.middle-carousels-container div.middleContainer-divider div.Bottom-divider{
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.144);
-  /* width: 98%; */
-  width: 100%;
-  padding-top: 0.8rem;
-}
-
-.middle-carousels-container div.middleContainer-divider a.button{
-    max-width: 230px;
-  text-decoration: none;
-  margin-top: 5px;
-  width: 30%;
-  display: block;
-  background-position: -10px -170px;
-  /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
-  background-image: url(/assets/imgs/AmazonBtn.png);
-}
-
-.middle-carousels-container div.middleContainer-divider a.button span{
-  cursor: pointer;
-background-position: right -170px;
-display: block;
-height: 28px;
-position: relative;
-color: hsl(0, 0%, 0%);
-font-size: 12px;
-line-height: 28px;
-text-align: center;
-font-weight: 700;
-text-decoration: none;
-text-shadow: 0 1px 0 #ffe093;
-margin-bottom: 3px;
-}
-
-.middle-carousels-container div.middleContainer-divider a:last-child{
-  text-transform: inherit;
-  margin-inline-start: 0.1rem;
-}
-
-.middle-carousels-container div.middleContainer-divider a:last-child:hover{
-color: var(--links-1-hover);
-}
-

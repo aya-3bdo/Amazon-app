@@ -130,9 +130,10 @@ export const RealProducts = () => {
 
   const styleAddedBtn = {
     background: "hsl(0, 39%, 43%)",
-    width: "40%",
-    fontSize: "0.3rem",
+    width: "47%",
+    fontSize: "0.9rem",
     paddingInline: "6px",
+    paddingBlock: "1px",
   };
 
   const dispatch = useDispatch();

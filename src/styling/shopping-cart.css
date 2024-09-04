@@ -21,10 +21,7 @@
   height: auto;
   overflow-y: auto;
   box-sizing: border-box;
-
-  /* border: 3px solid black; */
-
-  /* background: yellow; */
+  max-height: 62%;
 }
 
 .cart-container div.right-popup{
@@ -162,7 +159,7 @@ div.shopping-cart-container
   .right-content
   a:first-of-type {
   color: var(--links-2);
-  font-size: 0.5rem;
+  font-size: 0.655rem;
 }
 
 div.shopping-cart-container
@@ -205,7 +202,7 @@ div.shopping-cart-container
   div:last-child
   span:first-child
   a {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   text-decoration: none;
   color: var(--black-text-100);
   line-height: 0;
@@ -246,7 +243,7 @@ div.shopping-cart-container
   div:last-child
   span:last-child
   a {
-  font-size: 0.5rem !important;
+  font-size: 0.7rem !important;
   text-decoration: none;
   color: var(--black-text-100);
   line-height: 0;
@@ -255,20 +252,18 @@ div.shopping-cart-container
 
 .cart-container div.cart-divider {
   height: 90px;
-  /* margin-top: 6.9%; */
   background: var(--white-100);
   min-width: 600px;
   position: relative;
   left: 13.3%;
   width: 57.7%;
-  /* transform: translateY(125px); */
   top: 128px;
 }
 
 .cart-container p.last-content {
   font-size: 12px;
   color: var(--black-text-100);
-  line-height: 19px;
+  line-height: 1.8em;
   margin-block: 0.6rem 12px;
   padding-right: 1rem;
   position: relative;
@@ -281,7 +276,6 @@ div.shopping-cart-container
 .cart-container div.shopping-cart-container div.full-shopping-cart.fir-slice {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   background: var(--white-100);
   width: 100%;
   padding: 10px;
@@ -296,14 +290,10 @@ div.shopping-cart-container
   border-bottom: 1px solid hsl(0, 0%, 50%, 0.5);
   position: relative;
   margin-inline: 18px;
-  /* padding-block: 23px 10px; */
   padding-block: 23px;
-
-  /* background: yellow; */
   min-height: 160px;
   max-height: 189px;
   overflow-y: visible;
-  /* z-index: 1; */
   position: relative;
 }
 
@@ -320,7 +310,6 @@ div.shopping-cart-container
 }
 
 div.shopping-cart-container div.full-shopping-cart.fir-slice .sh-left-content {
-  /* background: yellow; */
   max-width: 18%;
   width: 18%;
   min-width: 160px;
@@ -391,14 +380,11 @@ div.shopping-cart-container
   div.sh-right-content
   .cart-buttons
   div.select-menu {
-  /* background:#F0F2F2 ; */
-  /* width: 10%; */
   min-width: 87px;
   cursor: pointer;
   padding-block: 0;
   margin-block: 0;
   position: relative;
-  /* height: 30px; */
   line-height: 4px;
   margin-right: 16px;
 }
@@ -461,7 +447,6 @@ div.shopping-cart-container
   position: absolute;
   z-index: 1;
   width: auto;
-  /* background: lightcoral; */
 }
 
 .cart-container
@@ -521,7 +506,6 @@ padding-block: 4px;
   form
   .custom-select-menu
   div.enterQty > input:focus{
-/* background-color: #F7FEFF; */
 border: 1px solid #007185;  
   box-shadow: 0 0 0 3px #C8F3FA,0 1px 2px rgba(15,17,17,.15) inset;
   }
@@ -556,6 +540,7 @@ border: 1px solid #007185;
   transform: rotate(-180deg);
   font-size: 0.65rem;
   color: var(--black-text-90);
+  pointer-events: none;
 }
 
 .cart-container
@@ -587,7 +572,6 @@ border: 1px solid #007185;
   font-size: 0.82rem;
   margin-right: 3px;
   pointer-events: none;
-  /* margin-top: 7px; */
 }
 
 .cart-container
@@ -618,8 +602,6 @@ border: 1px solid #007185;
   cursor: pointer;
   position: relativeS;
   z-index: 5;
-  /* background: yellow; */
-  /* overflow: hidden; */
 }
 
 .cart-container
@@ -649,7 +631,6 @@ border: 1px solid #007185;
   font-size: 0.75rem;
   color: var(--black-text-100);
   font-family: var(--regular-font);
-  /* padding: 0.155rem 5px;  */
   margin-bottom: -1px;
   padding-left: 12px;
   padding-block: 12px;
@@ -672,7 +653,6 @@ border: 1px solid #007185;
   ul.options-list
   li:hover:not(li:first-child) {
   border: 1px solid #d5d9d9;
-  /* border-left-color: rgb(213, 217, 217); */
   background-color: #f0f2f2 !important;
   color: inherit;
   border-left-color: #007185 !important;
@@ -732,8 +712,7 @@ border: 1px solid #007185;
   margin-right: 12px;
   margin-bottom: 50px;
   text-transform: capitalize;
-  /* border: 1px solid black; */
-  /* background: yellow; */
+
 }
 
 .cart-container
@@ -744,7 +723,6 @@ border: 1px solid #007185;
   .cart-buttons
   span:nth-child(2)
   > a {
-  /* height: 22px; */
   border-radius: 8px;
   box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
   background: #ffd814;
@@ -791,6 +769,7 @@ background: #F7CA00;
   a:hover {
   text-decoration: none;
 }
+
 .cart-container
   div.shopping-cart-container
   div.full-shopping-cart.fir-slice
@@ -816,7 +795,6 @@ background: #F7CA00;
   div.full-shopping-cart.fir-slice
   div.subtotal
   p {
-  /* border-top: 1px solid hsla(0, 0%, 70%, 0.478); */
   text-align: right;
   font-size: 0.9rem;
 }

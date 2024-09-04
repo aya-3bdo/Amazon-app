@@ -18,7 +18,7 @@
 }
 
 .create-account-parent .createAccount-logo-container > a {
-	background-image: url(/assets/imgs/amazon-logo-black.png);
+	background-image: url(../assets/imgs/amazon-logo-black.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 	background-position:-5px -130px;
@@ -101,10 +101,10 @@ border: 1px solid hsl(48, 100%, 47%);
 }
 
 .create-account-parent .form-container form > span:first-of-type > span:nth-child(2){
-	font-size: 14px;
+	font-size: 0.75rem;
 	color: var(--black-text-90);
 	position: relative;
-	left: 18px;
+	left: 15px;
   padding-right: 12px;
 
 
@@ -112,7 +112,7 @@ border: 1px solid hsl(48, 100%, 47%);
 
 .create-account-parent .form-container form > span:first-of-type > span.alert{
 display: inline-block;
-background-image: url(/assets/imgs/amazon-logo-black.png);
+background-image: url(../assets/imgs/amazon-logo-black.png);
 background-repeat: no-repeat;
 background-position: -165px -130px;
 background-size: 430px  770px;
@@ -169,13 +169,13 @@ height: 13px;
 .create-account-parent .terms .createAccount-form-divider{
 	background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
 	height: 24px;
+	width: 90%;
 }
 
 .create-account-parent .terms .createAccount-form-divider::after{
 display: block;
 width: 100%;
-height: 34px;
+height: 6px;
 background: linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
 content: "";
 }
-

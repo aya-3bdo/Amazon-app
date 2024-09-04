@@ -2,15 +2,68 @@ import React from "react";
 import "../styling/footer.css";
 import { Link, NavLink } from "react-router-dom";
 import { BsGlobe } from "react-icons/bs";
-import { MdOutlineArrowDropUp } from "react-icons/md";
-import {
-  handleShowFooterLangMenu,
-  handleHideFooterLangMenu,
-} from "../logic/Utils";
+import { MdOutlineArrowDropUp, MdOutlineArrowDropDown } from "react-icons/md";
+import $ from 'jquery';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const hiddenPath = '/ShoppingCart';
+
+
+
+
+  $(function () {
+    $(' .select-lang').on('mouseover', () => {
+      $('#footer-dropDown-arrow').show();
+      $('.dropdown-menu ').show();
+  }
+    ),
+    
+      $(' .select-lang').on('mouseleave', () => {
+        $('#footer-dropDown-arrow').hide();
+        $('.dropdown-menu ').hide();
+  }
+      )
+  })
+
+    useEffect(() => {
+      // Browser detection logic
+    let middleContainer_divider = document.querySelector('.middleContainer-divider');
+      const userAgent = navigator.userAgent.toLowerCase();
+      let browserName = 'other';
+      if (userAgent.indexOf('firefox') > -1) {
+          browserName = 'firefox';
+      }; 
+      // Apply specific styles based on the browser name
+      if (browserName === 'firefox') {
+          $('.footer-flag').css({height: '1.79rem' });
+//        middleContainer_divider.style.bottom = "-21%" 
+
+      }
+  }, []);
+
   return (
     <div className="footer-container d-flex flex-column">
+{/* Hide the divider from shopping cart route only */}
+ {/* divider */}
+{location.pathname !== hiddenPath && (
+  <div  className="middleContainer-divider">
+  <div className="Top-divider"></div>
+  <p>See personalized recommendations</p>
+  <Link to='/signin' className="button">
+    <span>
+    sign in
+    </span>
+  </Link>
+  <p>
+    new customer? <Link to="/createAccount">Start here</Link>
+  </p>
+  <div className="Bottom-divider"></div>
+</div>  
+           )}
+      
       <section className="fir-section">
         <div className="first-row text-center">
           <Link id="backToTop">Back to top</Link>
@@ -85,19 +138,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="Footer-divider"></div>
-        <div className="third-row mx-auto d-flex justify-content-center align-items-center">
-          <Link className=" position-relative">
+        <div className="third-row mx-auto d-flex justify-content-center align-items-center lang-globe-slice">
+          <Link className=" position-relative d-block">
             <div className="nav-logo-base me-5"></div>
           </Link>
-          <div className="lang-country-container ms-5 d-flex mb-3">
-            <div
-              className="select-lang me-2"
-              onMouseOver={() => handleShowFooterLangMenu()}
-              onMouseLeave={() => handleHideFooterLangMenu()}
-            >
-              <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end">
-                <span id="footer-dropDown-arrow"></span>
-
+          {/* <div className="lang-country-container ms-5 d-flex mb-3  "> */}
+            <div className="select-lang position-relative me-2">
+              <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end ">
+                      <span id="footer-dropDown-top-arrow"></span>
                 <div id="globe-lang">
                   <BsGlobe />
                 </div>
@@ -106,15 +154,20 @@ const Footer = () => {
                 </span>
                 <div className="dropdown ms-0 d-flex vertical-align-bottom position-relative">
                   <button
-                    className="btn dropdown-toggle d-flex "
+                    className="btn  dropdown-toggle d-flex "
                     type="button"
                     id="dropdownMenuButton1"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   ></button>
-                  <div id="top-arrow">
+                <div className="footer-lang-list-arrows">
+                <div id="top-arrow">
                     <MdOutlineArrowDropUp />
                   </div>
+                  <div id="bottom-arrow">
+                    <MdOutlineArrowDropDown />
+                  </div>
+                </div>
                   <ul
                     className="dropdown-menu m-0 p-0 "
                     aria-labelledby="dropdownMenuButton1"
@@ -173,14 +226,13 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="footer-country   d-flex align-items-center justify-content-start">
-              <Link>
+           <Link className="d-block  footer-flag text-center p-0 m-0">
                 <span className="footer-Egy-flag me-2"></span>
-                <span>Egypt</span>
+                <span className="align-baseline">Egypt</span>
               </Link>
+
             </div>
-          </div>
-        </div>
+        {/* </div> */}
       </section>
 
       <section className=" second-section">
@@ -189,8 +241,7 @@ const Footer = () => {
             <Link className="col-2">
               <span className="first-link">
                 <span className="d-block">Amazon</span>
-                Advertising
-              </span>
+                Advertising</span>
               <span>Find, attract, and engage customers</span>
             </Link>
             <Link className="col-2">
@@ -234,12 +285,11 @@ const Footer = () => {
 
           <div className="last-div text-center">
             <span className="me-2 pe-1">Conditions of Use & Sale</span>
-            <span className="me-2 pe-1">Privacy Notice</span>
-            <span> Interest-Based Ads</span>
-            <span id="copyright" className="d-block">
-              {" "}
-              ©1996&#727;2023, Amazon.com, Inc. or its affiliates
+            <span className="me-2 pe-1">
+              Privacy Notice
             </span>
+             <span> Interest-Based Ads</span>
+           <span id="copyright" className="d-block"> ©1996&#727;2023, Amazon.com, Inc. or its affiliates</span>
           </div>
         </div>
       </section>

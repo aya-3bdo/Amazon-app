@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "../../styling/topNav.css";
+import $ from "jquery";
 import { useSelector, useDispatch } from "react-redux";
 import { HiOutlineLocationMarker, HiOutlineSearch } from "react-icons/hi";
 import {
-  hanleResizingInput,
-  handleShowSignInSliceList,
-  handleHideSignInSliceList,
-  handleShowSelectWrapperStyle,
-  handleRemoveSelectWrapperStyle,
-  handleShowLangSliceList,
-  handleHideLangSliceList,
+  // hanleResizingInput,
+  // handleShowSignInSliceList,
+  // handleHideSignInSliceList,
+  // handleShowSelectWrapperStyle,
+  // handleRemoveSelectWrapperStyle,
+  // handleShowLangSliceList,
+  // handleHideLangSliceList,
 } from "../../logic/Utils.js";
 import {
   getShoppingCartItems,
@@ -25,12 +26,30 @@ export const TopNav = () => {
     addShoppingCartItem();
   }, [dispatch]);
 
+
+  /*  --- Resize select-menu width according to selected option  --- */
+
+  $(function () {
+    $("#option-width").html($("#select-menu option:selected").text());
+    $("#select-menu").width($("#select-width").width());
+
+    $("#select-menu").on('change', function () {
+      $("#option-width").html($("#select-menu option:selected").text());
+      $(this).width($("#select-width").width()
+      );
+    });
+  });
+
+
+
+
+
   return (
     <div className="TopStrip d-flex w-100">
       <nav className="navbar navbar-expand-lg top-strip w-100 px-md-0 d-flex flex-nowrap">
         {/*  ** ** ** ** ## ##  Top strip ## ## ** **  ** ** ** */}
 
-        <div className="parent-top-strip  container-fluid mx-1">
+        <div className="parent-top-strip  container-fluid mx-1 px-4">
           {/*  ** ** ** Left section-- top strip  ** ** ** */}
 
           <div className="left-section-top-strip d-flex  justify-content-between ">
@@ -61,21 +80,19 @@ export const TopNav = () => {
             </div>
           </div>
 
+    
           {/*  ** ** ** middle section-- top strip  ** ** ** */}
 
-          <div className="middle-section-top-strip  pt-1 px-2 px-xlg-0">
+          <div
+            className="middle-section-top-strip  pt-1 px-2 px-xlg-0 d-flex"
+          >
             {/* select slice */}
-
+            
             <div className="left-side-search d-flex border-radius-3">
-              <div
-                className="select-wrapper d-flex position-relative"
-                onClick={() => handleShowSelectWrapperStyle()}
-                onBlur={() => handleRemoveSelectWrapperStyle()}
-              >
+              <div className="select-wrapper d-flex position-relative">
                 <select
                   id="select-menu"
                   className="resizeselect d-flex px-2  text-capitalize"
-                  onChange={() => hanleResizingInput()}
                 >
                   <option defaultValue>all</option>
                   <option>books</option>
@@ -94,7 +111,7 @@ export const TopNav = () => {
                 <span className="d-flex align-self-center mb-1  dropDown-icon pe-none">
                   <i className=" fa-solid fa-caret-down "></i>
                 </span>
-                {/* <select
+                <select
                   style={{
                     display: "none",
                     visibility: "hidden",
@@ -102,13 +119,13 @@ export const TopNav = () => {
                   id="select-width"
                 >
                   <option id="option-width"></option>
-                </select> */}
+                </select>
               </div>
             </div>
 
             {/* search input slice */}
 
-            <div className="middle-side-search d-flex me-0 w-100 overflow-hidden">
+            <div className="middle-side-search d-flex me-0 w-100 overflow-hidden position-relative">
               <form className="d-flex search-wrapper">
                 <input
                   className="form-control d-flex "
@@ -116,15 +133,13 @@ export const TopNav = () => {
                   placeholder="Search Amazon.eg"
                   aria-label="Search"
                 ></input>
-              </form>
-            </div>
-
-            {/* search button slice */}
-
-            <div className="right-side-search search-ico d-flex  ms-0 ">
+                         <div className="right-side-search search-ico d-flex  ms-0 ">
               <button className="nav-search-submit-button px-2 " type="submit">
                 <HiOutlineSearch />
               </button>
+            </div>
+              </form>
+            
             </div>
           </div>
 
@@ -134,8 +149,8 @@ export const TopNav = () => {
             {/*  Lang slices */}
 
             <div
-              onMouseOver={() => handleShowLangSliceList()}
-              onMouseLeave={() => handleHideLangSliceList()}
+              // onMouseOver={() => handleShowLangSliceList()}
+              // onMouseLeave={() => handleHideLangSliceList()}
               className="lang-slice position-relative d-flex flex-row flex-nowrap align-items-end"
             >
               <span id="dropDown-arrow"></span>
@@ -207,8 +222,8 @@ export const TopNav = () => {
 
             <div
               className="sign-in-slice position-relative"
-              onMouseOver={() => handleShowSignInSliceList()}
-              onMouseLeave={() => handleHideSignInSliceList()}
+              // onMouseOver={() => handleShowSignInSliceList()}
+              // onMouseLeave={() => handleHideSignInSliceList()}
             >
               <div className="d-flex signIn-title pt-0">
                 {" "}

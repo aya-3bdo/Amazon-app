@@ -83,21 +83,6 @@ export default function MiddleCarousels() {
      {/* Third Carousel */}
      <ThirdCarouselSlider />
       
-      {/* divider */}
-      <div className="middleContainer-divider">
-        <div className="Top-divider"></div>
-        <p>See personalized recommendations</p>
-        <Link to='/signin' className="button">
-          <span>
-          sign in
-          </span>
-        </Link>
-        <p>
-          new customer? <Link to="/createAccount">Start here</Link>
-        </p>
-        <div className="Bottom-divider"></div>
-
-      </div>
     </div>
   );
 }
